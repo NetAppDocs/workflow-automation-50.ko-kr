@@ -1,0 +1,21 @@
+---
+permalink: windows-install/task-create-a-support-case-for-wfa.html 
+sidebar: sidebar 
+keywords: create, support, case, oncommand, workflow automation 
+summary: '기술 지원의 도움이 필요한 WFA(OnCommand Workflow Automation) 문제에 대한 지원 케이스를 생성할 수 있습니다. 지원 케이스를 생성하려면 기술 분류 템플릿을 사용해야 합니다.' 
+---
+= OnCommand Workflow Automation에 대한 지원 케이스를 생성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+기술 지원의 도움이 필요한 WFA(OnCommand Workflow Automation) 문제에 대한 지원 케이스를 생성할 수 있습니다. 지원 케이스를 생성하려면 기술 분류 템플릿을 사용해야 합니다.
+
+WFA용 기술 선별용 템플릿에서는 지원 케이스를 생성하는 데 필요한 모든 정보를 제공합니다. 문제를 구성하려면 기술 분류 템플릿의 질문과 정보를 사용해야 하며, 이는 케이스 해결에 필요한 시간을 단축하는데 도움이 됩니다.
+
+.단계
+. WFA 기술 선별심사 템플릿에 액세스
+. 템플릿을 사용하여 케이스를 생성하고 기술 지원 팀에 전송합니다.
+

@@ -1,0 +1,42 @@
+---
+permalink: windows-install/task-configure-snmp.html 
+sidebar: sidebar 
+keywords: configure, snmp 
+summary: 'WFA(OnCommand Workflow Automation)를 구성하여 워크플로우 작업의 상태에 대한 SNMP(Simple Network Management Protocol) 트랩을 보낼 수 있습니다.' 
+---
+= SNMP를 구성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA(OnCommand Workflow Automation)를 구성하여 워크플로우 작업의 상태에 대한 SNMP(Simple Network Management Protocol) 트랩을 보낼 수 있습니다.
+
+WFA '.mib' 파일에는 WFA 서버에서 보낸 트랩에 대한 정보가 들어 있습니다. '.mib' 파일은 WFA 서버의 '<WFA_install_location>\WFA\bin\WFA.mib' 디렉토리에 있습니다.
+
+
+NOTE: WFA 서버는 범용 개체 식별자(1.3.6.1.4.1.789.1.1.12.0)가 있는 모든 트랩 알림을 보냅니다.
+
+SNMP 구성에 _community_string@snmp_host_와 같은 SNMP 커뮤니티 문자열을 사용할 수 없습니다.
+
+.단계
+. 웹 브라우저를 통해 WFA에 admin 사용자로 로그인한 다음 WFA 서버에 액세스합니다.
+. 설정 * 을 클릭하고 * 설정 * 에서 * SNMP * 를 클릭합니다.
+. SNMP 사용 * 확인란을 선택합니다.
+. IPv4 또는 IPv6 주소 또는 호스트 이름 및 관리 호스트의 포트 번호를 입력합니다.
++
+WFA는 SNMP 트랩을 지정된 포트 번호로 보냅니다. 기본 포트 번호는 162입니다.
+
+. 알림 설정 * 섹션에서 다음 확인란 중 하나 이상을 선택합니다.
++
+** 워크플로 실행이 시작되었습니다
+** 워크플로 실행이 성공적으로 완료되었습니다
+** 워크플로 실행에 실패했거나 부분적으로 성공했습니다
+** 승인을 기다리는 워크플로 실행
+** 획득 실패
+
+
+. 테스트 알림 전송 * 을 클릭하여 설정을 확인합니다.
+. 저장 * 을 클릭합니다.
+

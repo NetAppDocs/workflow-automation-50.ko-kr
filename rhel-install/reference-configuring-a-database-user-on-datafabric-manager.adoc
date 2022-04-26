@@ -1,0 +1,14 @@
+---
+permalink: rhel-install/reference-configuring-a-database-user-on-datafabric-manager.html 
+sidebar: sidebar 
+keywords: configure, database, user, active iq, data center manager 
+summary: OnCommand Workflow Automation에 대한 Active IQ 데이터 센터 관리자 데이터베이스의 읽기 전용 액세스를 구성하려면 6.0 이전 버전의 Active IQ 데이터 센터 관리자 에서 데이터베이스 사용자를 만들어야 합니다. 
+---
+= Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OnCommand Workflow Automation에 대한 Active IQ 데이터 센터 관리자 데이터베이스의 읽기 전용 액세스를 구성하려면 6.0 이전 버전의 Active IQ 데이터 센터 관리자 에서 데이터베이스 사용자를 만들어야 합니다.

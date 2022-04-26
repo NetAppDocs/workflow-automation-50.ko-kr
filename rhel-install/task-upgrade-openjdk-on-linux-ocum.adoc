@@ -1,0 +1,62 @@
+---
+permalink: rhel-install/task-upgrade-openjdk-on-linux-ocum.html 
+sidebar: sidebar 
+keywords: oncommand, workflow, automation, upgrade, jre, linux 
+summary: '보안 취약점에 대한 수정 사항을 얻기 위해 OnCommand Workflow Automation가 설치된 Linux 서버에서 최신 버전의 Java Runtime Environment(JRE)로 업그레이드할 수 있습니다.' 
+---
+= Linux에서 JRE를 업그레이드합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+보안 취약점에 대한 수정 사항을 얻기 위해 OnCommand Workflow Automation가 설치된 Linux 서버에서 최신 버전의 Java Runtime Environment(JRE)로 업그레이드할 수 있습니다.
+
+WFA가 설치된 Linux 시스템에 대한 루트 권한이 있어야 합니다.
+
+
+NOTE: JRE 1.8의 업데이트 중 하나에서 JRE 1.8의 최신 업데이트로 업그레이드할 수 있습니다. Java 9와 같은 JRE의 최신 주요 릴리스로 업그레이드할 수 없습니다. 예를 들어, Java 8 업데이트 144(64비트)에서 Java 8 업데이트 151(64비트)로 또는 Java 8에서 Java 9로 업데이트할 수 없습니다.
+
+.단계
+. WFA 호스트 시스템에서 루트 사용자로 로그인합니다.
+. 대상 시스템에 적절한 버전의 Java(64비트)를 다운로드합니다.
+. JRE를 업그레이드하기 전에 다음 명령을 실행하여 WFA용 암호화 및 라이센스 키를 나열하십시오.
++
+'/opt/netapp/WFA/bin/WFA-K'
+
++
+이렇게 하면 다음과 같은 암호화 키가 반환됩니다.
+
++
+키: oidMG6GbIuHjdZG30JgFng ==
+
++
+'/opt/netapp/WFA/bin/WFA - 라이센스'
+
++
+그러면 다음과 같은 라이센스 키가 반환됩니다.
+
++
+키: MS8xLzIwotkgMTE6NTkgUE0=
+
++
+JRE 업그레이드 중에 키 재구성에 필요한 키를 저장합니다.
+
+. WFA 서비스를 중지합니다.
++
+'service WFA-server stop
+
+. 시스템에 최신 JRE를 설치합니다.
+. JRE를 업그레이드하려면 다음 명령을 사용하여 3단계에서 저장한 키를 다시 구성하십시오.
++
+'/opt/netapp/WFA/bin/WFA - license=MS8xLzIwotkgMTE6NTkgUE0='
+
++
+'/opt/netapp/WFA/bin/WFA-K=oidMG6GbIuHjdZG30JgFng="
+
+. WFA 서비스를 시작합니다.
++
+'서비스 WFA - 서버 시작
+
+

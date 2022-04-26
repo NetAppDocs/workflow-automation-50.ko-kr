@@ -1,0 +1,134 @@
+---
+permalink: windows-install/task-configure-wfa-with-mscs-using-configuration-scripts.html 
+sidebar: sidebar 
+keywords: configure, workflow, automation, mscs 
+summary: 'MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치한 후에는 구성 스크립트를 사용하여 MSCS에서 고가용성을 지원하도록 WFA를 구성해야 합니다.' 
+---
+= MSCS를 사용하여 Workflow Automation을 구성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치한 후에는 구성 스크립트를 사용하여 MSCS에서 고가용성을 지원하도록 WFA를 구성해야 합니다.
+
+WFA 백업을 만들어야 합니다.
+
+.단계
+. MSCS 클러스터의 첫 번째 노드에 로그인하고 다음 단계를 수행하십시오.
++
+[cols="2*"]
+|===
+| 대상... | 수행할 작업... 
+
+
+ a| 
+Windows 2012
+ a| 
+.. Failover Cluster Manager에서 * Service Roles * 를 마우스 오른쪽 버튼으로 클릭합니다.
+.. Create Empty Service Role * 을 선택한 다음 역할의 이름을 ""WFA""로 변경합니다.
+.. 새로 생성된 "WFA" 역할에 IP 주소 리소스를 추가합니다.
++
+... Failover Cluster Manager에서 새로 생성된 "WFA" 역할을 마우스 오른쪽 버튼으로 클릭합니다.
+... 리소스 * > * 추가 리소스 * > * IP 주소 * 를 선택합니다.
+... 클러스터 IP 주소를 구성합니다.
+
+
+
+
+
+
+ a| 
+Windows 2008
+ a| 
+.. Failover Cluster Manager에서 * Services and Applications * 를 마우스 오른쪽 버튼으로 클릭합니다.
+.. More Actions * > * Create Empty Service 또는 Application * 을 클릭하고 서비스 이름을 "WFA"로 변경합니다.
+.. 새로 생성된 "WFA" 서비스에 IP 주소 리소스를 추가합니다.
++
+... Failover Cluster Manager에서 새로 생성된 "WFA" 서비스를 마우스 오른쪽 버튼으로 클릭합니다.
+... Add a resource * > * more resources * > * Add IP Address * 를 선택합니다.
+... 클러스터 IP 주소를 구성합니다.
+
+
+
+
+|===
+. 명령 프롬프트에서 "ha_setup.pl" 스크립트를 실행하여 WFA 데이터를 공유 위치로 이동하고 장애 조치를 위해 MSCS를 사용하여 WFA를 구성합니다. "perl ha_setup.pl -- 첫 번째 [-t type_of_cluster_vcs] [-g cluster_group_name] [-i ip_address_resource_name] [-n cluster_name] [-k shared_disk_resource_name
++
+이 스크립트는 'WFA_INSTALL_LOCATION\WFA\BIN\ha\.'에서 다운로드할 수 있습니다
+
++
+* 예 *
+
++
+"perl ha_setup.pl --first-t MSCS-g WFA-i "Cluster IP Address" -n WFA_cluster -k "Cluster Disk 2" -f E:\"
+
+. MSCS 리소스가 생성되었는지 확인합니다.
+. 페일오버 클러스터 관리자에서 WFA 서비스를 중지합니다.
++
+|===
+
+
+| 대상... | 수행할 작업... 
+
+
+ a| 
+Windows 2012
+ a| 
+.. 서비스 역할 * 을 선택한 다음 새로 생성된 "'WFA' 역할을 선택합니다.
+.. 리소스 창에서 * NA_WFA_DB * 를 마우스 오른쪽 단추로 클릭한 다음 * 오프라인 상태로 전환 * 을 선택합니다.
+.. 리소스 창에서 * NA_WFA_SRV * 를 마우스 오른쪽 단추로 클릭한 다음 * 오프라인 상태로 전환 * 을 선택합니다.
+
+
+
+
+ a| 
+Windows 2008
+ a| 
+.. 서비스 및 애플리케이션 * 을 선택한 다음 새로 생성된 "'WFA' 서비스를 선택합니다.
+.. 기타 리소스 창에서 * NA_WFA_DB * 를 마우스 오른쪽 단추로 클릭한 다음 * 이 리소스를 오프라인으로 전환 * 을 선택합니다.
+.. 기타 리소스 창에서 * NA_WFA_SRV * 를 마우스 오른쪽 단추로 클릭한 다음 * 이 리소스를 오프라인으로 전환 * 을 선택합니다.
+
+
+|===
++
+WFA 데이터베이스 서비스와 WFA 서버 서비스를 오프라인으로 전환해야 하는 경우 Windows 서비스에서 WFA 서비스를 중지해서는 안 됩니다.
+
+. WFA 리소스를 보조 노드로 수동으로 이동합니다.
+. 두 번째 노드에서 공유 디스크를 액세스할 수 있는지 확인합니다.
+. 명령 프롬프트에서 클러스터의 보조 노드에 있는 "ha_setup.pl" 스크립트를 실행하여 공유 위치의 데이터를 사용하도록 WFA를 구성하십시오. ' perl ha_setup.pl -- join [-t type_of_cluster_MSCS] [-f shared_drive_path]
++
+ha_setup.pl 스크립트는 WFA_INSTALL_LOCATION\WFA\BIN\ha\에서 구할 수 있습니다
+
++
+* 예 *
+
++
+' perl ha_setup.pl - -join -t MSCS -f E:\'
+
+. Failover Cluster Manager에서 WFA 리소스를 온라인으로 전환합니다.
++
+[cols="2*"]
+|===
+| 대상... | 수행할 작업... 
+
+
+ a| 
+Windows 2012
+ a| 
+.. 새로 생성된 ""WFA" 역할을 마우스 오른쪽 버튼으로 클릭한 다음 * Start Role * 을 선택합니다. 역할은 실행 중 상태여야 하며 개별 리소스는 온라인 상태여야 합니다.
+
+
+
+
+ a| 
+Windows 2008
+ a| 
+.. 새로 생성한 "'WFA' 서비스를 마우스 오른쪽 버튼으로 클릭한 다음 * 이 서비스 또는 애플리케이션을 온라인 상태로 전환 * 을 선택합니다. 서비스는 '실행 중' 상태에 있어야 하며, 개별 자원은 '온라인' 상태에 있어야 합니다.
+
+
+|===
+. MSCS 클러스터의 두 번째 노드로 수동으로 전환합니다.
+. WFA 서비스가 클러스터의 두 번째 노드에서 제대로 시작되는지 확인합니다.
+

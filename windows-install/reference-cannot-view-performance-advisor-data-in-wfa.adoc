@@ -1,0 +1,22 @@
+---
+permalink: windows-install/reference-cannot-view-performance-advisor-data-in-wfa.html 
+sidebar: sidebar 
+keywords: cannot view, performance, advisor, data, wfa 
+summary: WFA에서 Performance Advisor 데이터를 볼 수 없거나 Performance Advisor 데이터 소스의 데이터 수집 프로세스가 실패할 경우 특정 작업을 수행하여 문제를 해결해야 합니다. 
+---
+= WFA에서 Performance Advisor 데이터를 볼 수 없습니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+WFA에서 Performance Advisor 데이터를 볼 수 없거나 Performance Advisor 데이터 소스의 데이터 수집 프로세스가 실패할 경우 특정 작업을 수행하여 문제를 해결해야 합니다.
+
+* WFA에서 Performance Advisor를 데이터 소스로 구성할 때 Active IQ 데이터 센터 관리자 사용자의 자격 증명을 GlobalRead의 최소 역할로 지정해야 합니다.
+* WFA에서 Performance Advisor를 데이터 소스로 구성할 때 올바른 포트를 지정했는지 확인하십시오.
++
+기본적으로 Active IQ 데이터 센터 관리자는 HTTP 연결의 경우 포트 8088을 사용하고 HTTPS 연결의 경우 포트 8488을 사용합니다.
+
+* Active IQ 데이터 센터 관리자 서버에서 성능 데이터를 수집하는지 확인합니다.
+
