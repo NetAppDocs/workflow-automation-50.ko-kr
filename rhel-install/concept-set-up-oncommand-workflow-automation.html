@@ -1,0 +1,4064 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>OnCommand Workflow Automation를 설정합니다</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="OnCommand Workflow Automation를 설정합니다" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html" />
+	<meta property="og:description" content="WFA(OnCommand Workflow Automation) 설치를 완료한 후에는 몇 가지 구성 설정을 완료해야 합니다. WFA에 액세스하고, 사용자를 구성하고, 데이터 소스를 설정하고, 자격 증명을 구성하고, WFA를 구성해야 합니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/workflow-automation-50/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="WFA(OnCommand Workflow Automation) 설치를 완료한 후에는 몇 가지 구성 설정을 완료해야 합니다. WFA에 액세스하고, 사용자를 구성하고, 데이터 소스를 설정하고, 자격 증명을 구성하고, WFA를 구성해야 합니다.">
+  <meta name="keywords" content=" set up, oncommand workflow automation"><!-- Icons -->
+  <link rel="icon" href="/ko-kr/workflow-automation-50/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/workflow-automation-50/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/workflow-automation-50/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/workflow-automation-50/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/workflow-automation-50/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/workflow-automation-50/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/workflow-automation-50/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/workflow-automation-50/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/workflow-automation-50/js/na-search.js'></script><script src='/ko-kr/workflow-automation-50/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/workflow-automation-50/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/workflow-automation-50/js/na-utility.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/clouddocs.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/workflow-automation-50/js/toc.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/ko-kr/workflow-automation-50/js/custom-dropdown.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/jszip.min.js'></script>
+  <script src='/ko-kr/workflow-automation-50/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/issues/new?body=Page%3A%20[OnCommand Workflow Automation를 설정합니다](https://docs.netapp.com/ko-kr/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/blob/main/rhel-install/concept-setting-up-oncommand-workflow-automation.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/workflow-automation-50/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/workflow-automation-50/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/ko-kr/workflow-automation-50/pdfs/fullsite-sidebar/OnCommand_Workflow_Automation_문서.pdf" >
+          <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Linux용_설치_및_설정.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Linux용 설치 및 설정
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_개요.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 개요
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설치를_위한_시스템_요구_사항.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 설치를 위한 시스템 요구 사항
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Workflow_Automation_설치를_위한_사전_요구사항.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Workflow Automation 설치를 위한 사전 요구사항
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            고가용성 관리
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_VCS에서_워크플로우_자동화_설정.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            고가용성을 위해 VCS에서 워크플로우 자동화 설정
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation를_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation를 설정합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터_소스.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터 소스
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_IQ_데이터_센터_관리자에서_데이터베이스_사용자_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+            <li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/workflow-automation-50/pdfs/pages/rhel-install/concept-set-up-oncommand-workflow-automation.pdf" >
+    <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_이상에서_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 3.1 이상에서 업그레이드합니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/타사_제품_업그레이드.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            타사 제품 업그레이드
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_백업하는_중입니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스_백업.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            CLI를 사용하여 WFA 데이터베이스 백업
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_백업.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            REST API를 사용하여 WFA 데이터베이스 백업
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_복원하는_중입니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스를_복원합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            CLI를 사용하여 WFA 데이터베이스를 복원합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_복원.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            REST API를 사용하여 WFA 데이터베이스 복원
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_콘텐츠를_가져옵니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 콘텐츠를 가져옵니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_인증서_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation SSL 인증서 관리
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Perl_및_Perl_모듈_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Perl 및 Perl 모듈 관리
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/설치_및_구성_문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            설치 및 구성 문제 해결
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Windows용_설치_및_설정.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Windows용 설치 및 설정
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_개요.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 개요
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설치를_위한_시스템_요구_사항.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 설치를 위한 시스템 요구 사항
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            고가용성 관리
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_MSCS에서_Workflow_Automation을_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_MSCS에서_Workflow_Automation을_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설정.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 설정
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터_소스.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터 소스
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_IQ_데이터_센터_관리자에서_데이터베이스_사용자_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation를_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation를 업그레이드합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_이상_버전에서_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 3.1 이상 버전에서 업그레이드합니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/타사_제품_업그레이드.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            타사 제품 업그레이드
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_백업하는_중입니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스_백업.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            CLI를 사용하여 WFA 데이터베이스 백업
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_백업.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            REST API를 사용하여 WFA 데이터베이스 백업
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_복원하는_중입니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스를_복원합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            CLI를 사용하여 WFA 데이터베이스를 복원합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_복원.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            REST API를 사용하여 WFA 데이터베이스 복원
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_콘텐츠를_가져옵니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 콘텐츠를 가져옵니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_인증서_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation SSL 인증서 관리
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Perl_및_Perl_모듈_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Perl 및 Perl 모듈 관리
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/설치_및_구성_문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            설치 및 구성 문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/온라인_도움말.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            온라인 도움말
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_디자이너_기능.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation 디자이너 기능
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/데이터_원본을_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            데이터 원본을 설정합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/MVEL에_대한_정보를_찾는_위치.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            MVEL에 대한 정보를 찾는 위치
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/사용자_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            사용자 창
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_Directory_그룹_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Active Directory 그룹 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/데이터_소스_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            데이터 소스 창
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/자격_증명_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            자격 증명 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/스케줄_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            스케줄 창
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로 창
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/새_워크플로_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            새 워크플로 창
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/파인더_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            파인더 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/필터_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            필터 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/명령_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            명령 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/템플릿_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            템플릿 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/사전_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            사전 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/원격_시스템_유형_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            원격 시스템 유형 창
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/캐시_쿼리_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            캐시 쿼리 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/팩_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            팩 창
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/범주_창.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            범주 창
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로우
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/Workflow_Automation_설계자_이해.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            Workflow Automation 설계자 이해
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation에서_빌딩_블록_작업.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            OnCommand Workflow Automation에서 빌딩 블록 작업
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로 관리
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/미리_정의된_워크플로_사용자_지정.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            미리 정의된 워크플로 사용자 지정
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우_생성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로우 생성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로를_만듭니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로를 만듭니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_워크플로우_팩을_생성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            WFA 워크플로우 팩을 생성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_워크플로우_팩을_SCM_리포지토리에_통합합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            WFA 워크플로우 팩을 SCM 리포지토리에 통합합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우를_위한_구성_요소_생성.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            워크플로우를 위한 구성 요소 생성
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/명령을_생성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            명령을 생성합니다
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA에_대한_코딩_지침.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            WFA에 대한 코딩 지침
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA에_대한_일반_PowerShell_및_Perl_규칙.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            WFA에 대한 일반 PowerShell 및 Perl 규칙
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_구성_요소에_대한_지침입니다.pdf" 
+            
+          >
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            WFA 구성 요소에 대한 지침입니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/workflow-automation-50/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/index.html">
+        OnCommand Workflow Automation 5.0 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/reference-releasenotes.html">
+        릴리즈 노트
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Linux용 설치 및 설정</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-overview-of-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 개요</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/concept-oncommand-workflow-automation-deployment-architecture.html">
+        OnCommand Workflow Automation 구축 아키텍처
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/concept-oncommand-workflow-automation-installation-and-configuration-instructions.html">
+        OnCommand Workflow Automation 설치 및 설정 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/concept-unsupported-features-for-wfa-on-linux.html">
+        OnCommand Workflow Automation에 대해 알려진 제한 사항
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-system-requirements-for-oncommand-workflow-automation-linux.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 설치를 위한 시스템 요구 사항</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/reference-ports-required-for-oncommand-workflow-automation.html">
+        Workflow Automation에 필요한 포트 수
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-prerequisites-for-installing-workflow-automation.html">
+        <div class="na-navbar-padding"> Workflow Automation 설치를 위한 사전 요구사항</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-install-perl-module-on-centos-and-rhel.html">
+        CentOS 및 RHEL에 Perl 모듈을 설치합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-managing-high-availability.html">
+        <div class="na-navbar-padding"> 고가용성 관리</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/task-set-up-wfa-in-vcs.html">
+        <div class="na-navbar-padding"> 고가용성을 위해 VCS에서 워크플로우 자동화 설정</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-vcs-to-install-wfa.html">
+        OnCommand Workflow Automation를 설치하도록 VCS를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-install-oncommand-workflow-automation.html">
+        Linux에 OnCommand Workflow Automation를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-wfa-with-vcs-using-configuration-scripts-linux.html">
+        VCS에서 워크플로우 자동화를 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-an-earlier-version-of-wfa-to-high-availability.html">
+        고가용성을 위해 이전 버전의 OnCommand Workflow Automation를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-uninstall-wfa-in-a-vcs-environment.html">
+        VCS 환경에서 Workflow Automation을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-up-the-wfa-database-and-configurations-linux.html">
+        Linux에서 OnCommand Workflow Automation 데이터베이스 및 구성을 백업 및 복구합니다
+      </a></li></ul></li><li class="subfolders  active "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-set-up-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation를 설정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-access-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation에 액세스합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-wfa-data-sources.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터 소스</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-configuring-a-database-user-on-datafabric-manager.html">
+        <div class="na-navbar-padding"> Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-set-up-a-data-source.html">
+        데이터 원본을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-add-an-upgraded-unified-manager-server-data-source.html">
+        업그레이드된 Data Center Manager 서버를 데이터 소스로 추가합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-create-local-users.html">
+        로컬 사용자를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-the-credentials-of-a-target-system.html">
+        대상 시스템의 자격 증명을 구성합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-autosupport.html">
+        AutoSupport를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-authentication-settings.html">
+        인증 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-add-active-directory-group-names.html">
+        Active Directory 그룹을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-mail.html">
+        이메일 알림을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-snmp.html">
+        SNMP를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-syslog.html">
+        Syslog를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-protocols-for-connecting-to-remote-systems.html">
+        원격 시스템에 연결하기 위한 프로토콜을 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-disable-the-default-password-policy-linux.html">
+        기본 암호 정책을 사용하지 않도록 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-modify-the-default-password-policy-linux.html">
+        기본 암호 정책을 수정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database-linux.html">
+        OnCommand Workflow Automation 데이터베이스에 대한 원격 액세스를 설정하거나 해제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation-linux.html">
+        OnCommand Workflow Automation의 트랜잭션 제한 시간 설정을 수정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-the-timeout-value-for-linux.html">
+        Workflow Automation의 시간 초과 값을 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/task-upgrade-from-wfa-4-2.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 3.1 이상에서 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/reference-pack-identification-during-upgrade.html">
+        업그레이드 중 팩 식별
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-upgrading-third-party-products-in-linux.html">
+        <div class="na-navbar-padding"> 타사 제품 업그레이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-upgrade-openjdk-on-linux-ocum.html">
+        Linux에서 JRE를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-upgrade-mysql-on-linux.html">
+        Linux에서 MySQL 업그레이드
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-up-oncommand-workflow-automation-database-using-the-web-portal.html">
+        웹 포털에서 WFA 데이터베이스를 백업합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-backing-up-the-wfa-database-using-the-command-line-interface.html">
+        <div class="na-navbar-padding"> CLI를 사용하여 WFA 데이터베이스 백업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-up-full-the-wfa-database-using-perl-script-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 전체 백업(전체)합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-up-regular-the-wfa-database-using-perl-script-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 백업(일반)합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-backing-up-the-wfa-database-using-rest-apis.html">
+        <div class="na-navbar-padding"> REST API를 사용하여 WFA 데이터베이스 백업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-full-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API를 사용하여 WFA 데이터베이스의 전체 백업을 수행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-back-up-regular-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API를 사용하여 WFA 데이터베이스를 정기적으로 백업합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-restoring-the-wfa-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-restore-oncommand-workflow-automation-database-using-web-portal.html">
+        WFA 데이터베이스를 복원합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-restoring-the-oncommand-workflow-automation-database-using-cli.html">
+        <div class="na-navbar-padding"> CLI를 사용하여 WFA 데이터베이스를 복원합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-restore-full-the-oncommand-workflow-automation-database-and-configurations-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 전체 상태로 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-restore-regular-the-oncommand-workflow-automation-database-and-configurations-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 복원(일반)합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-restoring-the-oncommand-workflow-automation-database-using-rest-api.html">
+        <div class="na-navbar-padding"> REST API를 사용하여 WFA 데이터베이스 복원</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-restore-full-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API를 사용하여 WFA 데이터베이스를 전체 상태로 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-restore-regular-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API를 사용하여 WFA 데이터베이스를 복원(일반
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-reset-the-admin-password-created-during-installation-linux.html">
+        설치 중에 생성한 admin 암호를 재설정합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/task-import-oncommand-workflow-automation-content.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 콘텐츠를 가져옵니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져오는 동안 고려해야 할 사항입니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-migrate-the-oncommand-workflow-automation-installation-linux.html">
+        OnCommand Workflow Automation 설치를 마이그레이션합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-uninstall-oncommand-workflow-automation-linux.html">
+        OnCommand Workflow Automation를 제거합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-managing-oncommand-workflow-automation-ssl-certificates.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation SSL 인증서 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-replace-the-default-workflow-automation-ssl-certificate-linux.html">
+        기본 Workflow Automation SSL 인증서를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-create-a-certificate-signing-request-for-workflow-automation-linux.html">
+        Workflow Automation에 대한 인증서 서명 요청을 생성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/concept-managing-perl-and-perl-modules.html">
+        <div class="na-navbar-padding"> Perl 및 Perl 모듈 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-configure-your-preferred-perl-distribution-linux.html">
+        기본 Perl 배포를 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/rhel-install/reference-troubleshooting.html">
+        <div class="na-navbar-padding"> 설치 및 구성 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/reference-cannot-view-performance-advisor-data-in-wfa.html">
+        WFA에서 Performance Advisor 데이터를 볼 수 없습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/task-create-a-support-case-for-wfa.html">
+        OnCommand Workflow Automation에 대한 지원 케이스를 생성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/rhel-install/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 관련 문서
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Windows용 설치 및 설정</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-overview-of-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 개요</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/concept-oncommand-workflow-automation-deployment-architecture.html">
+        OnCommand Workflow Automation 구축 아키텍처
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/concept-oncommand-workflow-automation-installation-and-configuration-instructions.html">
+        OnCommand Workflow Automation 설치 및 설정 개요
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-system-requirements-for-oncommand-workflow-automation-windows.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 설치를 위한 시스템 요구 사항</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-ports-required-for-oncommand-workflow-automation.html">
+        Workflow Automation에 필요한 포트 수
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-prerequisites-for-installing-workflow-automation.html">
+        Workflow Automation 설치를 위한 사전 요구사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-install-workflow-automation-on-windows.html">
+        Windows에 OnCommand Workflow Automation를 설치합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-managing-high-availability.html">
+        <div class="na-navbar-padding"> 고가용성 관리</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/task-set-up-wfa-in-mscs.html">
+        <div class="na-navbar-padding"> 고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-mscs-to-install-wfa.html">
+        Workflow Automation을 설치하기 위해 MSCS를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-install-workflow-automation-on-windows.html">
+        Windows에 OnCommand Workflow Automation를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-wfa-with-mscs-using-configuration-scripts.html">
+        MSCS를 사용하여 Workflow Automation을 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-an-earlier-version-of-wfa-foir-high-availability-windows.html">
+        고가용성을 위해 이전 버전의 OnCommand Workflow Automation를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-uninstall-wfa-in-an-mscs-environment.html">
+        MSCS 환경에서 Workflow Automation을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-and-restore-the-wfa-database-and-configurations-windows.html">
+        Windows에서 OnCommand Workflow Automation 데이터베이스 및 구성을 백업하고 복원합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/task-set-up-wfa-in-mscs.html">
+        <div class="na-navbar-padding"> 고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-mscs-to-install-wfa.html">
+        Workflow Automation을 설치하기 위해 MSCS를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-install-workflow-automation-on-windows.html">
+        Windows에 OnCommand Workflow Automation를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-wfa-with-mscs-using-configuration-scripts.html">
+        MSCS를 사용하여 Workflow Automation을 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-setting-up-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 설정</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-access-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation에 액세스합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-wfa-data-sources.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터 소스</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-configuring-a-database-user-on-datafabric-manager.html">
+        <div class="na-navbar-padding"> Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-set-up-a-data-source.html">
+        데이터 원본을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-add-an-upgraded-unified-manager-server-data-source.html">
+        업그레이드된 Data Center Manager 서버를 데이터 소스로 추가합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-create-local-users.html">
+        로컬 사용자를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-the-credentials-of-a-target-system.html">
+        대상 시스템의 자격 증명을 구성합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-autosupport.html">
+        AutoSupport를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-authentication-settings.html">
+        인증 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-add-active-directory-group-names.html">
+        Active Directory 그룹을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-mail.html">
+        이메일 알림을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-snmp.html">
+        SNMP를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-syslog.html">
+        Syslog를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-protocols-for-connecting-to-remote-systems.html">
+        원격 시스템에 연결하기 위한 프로토콜을 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-disable-the-default-password-policy.html">
+        기본 암호 정책을 사용하지 않도록 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-modify-the-default-password-policy-windows.html">
+        Windows의 기본 암호 정책을 수정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-enable-remote-access-to-the-oncommand-workflow-automation-database.html">
+        Windows에서 OnCommand Workflow Automation 데이터베이스에 대한 원격 액세스를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-restrict-access-rights-of-oncommand-workflow-automation-on-the-host.html">
+        호스트에서 OnCommand Workflow Automation의 액세스 권한을 제한합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-modify-the-transaction-timeout-setting-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation의 트랜잭션 제한 시간 설정을 수정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-the-timeout-value-for-windows.html">
+        Workflow Automation의 시간 초과 값을 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/task-upgrade-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation를 업그레이드합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/task-upgrade-from-oncommand-workflow-automation-3-1-or-later-on-windows.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 3.1 이상 버전에서 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-pack-identification-during-upgrade.html">
+        업그레이드 중 팩 식별
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-upgrading-third-party-products-in-windows.html">
+        <div class="na-navbar-padding"> 타사 제품 업그레이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-upgrade-jre-on-windows-wfa.html">
+        JRE를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-upgrade-mysql-on-windows-wfa.html">
+        MySQL 업그레이드
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-upgrade-active-state-perl-on-windows.html">
+        ActiveState Perl을 업그레이드합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-backing-up-of-the-oncommand-workflow-automation-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-oncommand-workflow-automation-database-using-the-web-portal.html">
+        웹 포털에서 WFA 데이터베이스를 백업합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-oncommand-workflow-automation-using-powershell-script.html">
+        PowerShell 스크립트를 사용하여 WFA 데이터베이스를 백업합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-backing-up-the-wfa-database-using-the-command-line-interface.html">
+        <div class="na-navbar-padding"> CLI를 사용하여 WFA 데이터베이스 백업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-full-the-wfa-database-using-perl-script-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 전체 백업(전체)합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-regular-the-wfa-database-using-perl-script-linux.html">
+        CLI를 사용하여 WFA 데이터베이스를 백업(일반)합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-backing-up-the-wfa-database-using-rest-apis.html">
+        <div class="na-navbar-padding"> REST API를 사용하여 WFA 데이터베이스 백업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-full-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API를 사용하여 WFA 데이터베이스의 전체 백업을 수행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-back-up-regular-oncommand-workflow-automation-database-using-rest-api.html">
+        REST API를 사용하여 WFA 데이터베이스를 정기적으로 백업합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-restoring-the-wfa-database.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-restore-oncommand-workflow-automation-database-using-web-portal.html">
+        WFA 데이터베이스를 복원합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-restoring-the-oncommand-workflow-automation-database-using-cli.html">
+        <div class="na-navbar-padding"> CLI를 사용하여 WFA 데이터베이스를 복원합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-fully-restore-the-oncommand-workflow-automation-database-using-clis-windows.html">
+        CLI를 사용하여 WFA 데이터베이스를 전체 상태로 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-regular-restore-of-the-oncommand-workflow-automation-database-using-clis-windows.html">
+        CLI를 사용하여 WFA 데이터베이스를 복원(일반
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/concept-restoring-the-oncommand-workflow-automation-database-using-rest-api.html">
+        <div class="na-navbar-padding"> REST API를 사용하여 WFA 데이터베이스 복원</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-restore-full-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API를 사용하여 WFA 데이터베이스를 전체 상태로 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-restore-regular-the-oncommand-workflow-automation-database-using-rest-apis.html">
+        REST API를 사용하여 WFA 데이터베이스를 복원(일반
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-reset-the-admin-password-created-during-installation.html">
+        설치 중에 생성한 admin 암호를 재설정합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/task-import-oncommand-workflow-automation-content.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 콘텐츠를 가져옵니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져오는 동안 고려해야 할 사항입니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-migrate-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 설치를 마이그레이션합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-uninstall-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation를 제거합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-managing-oncommand-workflow-automation-ssl-certificates.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation SSL 인증서 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-replace-the-default-workflow-automation-ssl-certificate.html">
+        기본 Workflow Automation SSL 인증서를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-create-a-certificate-signing-request-for-workflow-automation-windows.html">
+        Workflow Automation에 대한 인증서 서명 요청을 생성합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-managing-perl-and-perl-modules.html">
+        <div class="na-navbar-padding"> Perl 및 Perl 모듈 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-configure-your-preferred-perl-interpreter.html">
+        기본 Perl 배포를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-manage-site-specific-perl-modules.html">
+        사이트별 Perl 모듈을 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-repair-the-activeperl-installation.html">
+        ActivePerl 설치를 복구합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/windows-install/reference-troubleshooting.html">
+        <div class="na-navbar-padding"> 설치 및 구성 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-cannot-open-the-oncommand-workflow-automation-login-page.html">
+        OnCommand Workflow Automation 로그인 페이지를 열 수 없습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-cannot-view-performance-advisor-data-in-wfa.html">
+        WFA에서 Performance Advisor 데이터를 볼 수 없습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-wfa-displays-a-blank-page-on-windows-2012.html">
+        OnCommand Workflow Automation(WFA)에는 Windows 2012에 대한 빈 페이지가 표시됩니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/task-create-a-support-case-for-wfa.html">
+        OnCommand Workflow Automation에 대한 지원 케이스를 생성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/windows-install/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 관련 문서
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 온라인 도움말</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-overview-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-create-local-users.html">
+        로컬 사용자를 생성합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/concept-advanced-configuring-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-authentication-settings.html">
+        인증 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-mail.html">
+        이메일 알림을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-snmp.html">
+        SNMP를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-syslog.html">
+        Syslog를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-autosupport.html">
+        AutoSupport를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-email-notifications-for-data-source-acquisition-failures.html">
+        데이터 소스 획득 실패에 대한 이메일 알림을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-resource-reservation-for-workflows.html">
+        워크플로우에 대한 리소스 예약을 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-the-credentials-of-a-target-system.html">
+        대상 시스템의 자격 증명을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-protocols-for-connecting-to-remote-systems.html">
+        원격 시스템에 연결하기 위한 프로토콜을 구성합니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-oncommand-workflow-automation-designer-features.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation 디자이너 기능</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-repeat-row-works.html">
+        행 반복 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-approval-points-are.html">
+        승인 지점은 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-continue-on-failure-is.html">
+        장애 시 계속 진행 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-resource-selection-works.html">
+        리소스 선택 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-reservation-works.html">
+        예약 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-incremental-naming-is.html">
+        증분 이름은 입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-conditional-execution-is.html">
+        조건부 실행이란
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-return-parameters-are.html">
+        반환 매개 변수의 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-schemes-are.html">
+        구성표는 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-what-remote-system-types-are.html">
+        어떤 원격 시스템 유형인지 확인하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-entity-versioning-works.html">
+        엔터티 버전 관리 작동 방식
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-you-define-workflows.html">
+        워크플로우를 정의하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-you-map-command-parameters.html">
+        명령 매개 변수를 매핑하는 방법입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-you-define-user-input.html">
+        사용자 입력 정의 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-you-define-constants.html">
+        상수를 정의하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/concept-how-you-use-the-rest-api.html">
+        REST API 사용 방법
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/task-set-up-a-data-source.html">
+        <div class="na-navbar-padding"> 데이터 원본을 설정합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-a-database-user-by-running-ocsetup-on-windows.html">
+        Windows에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-configure-a-database-user-by-running-ocsetup-on-linux.html">
+        Linux에서 ocsetup을 실행하여 데이터베이스 사용자를 구성합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-create-workflow-help-content.html">
+        워크플로 도움말 콘텐츠를 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-reserved-words.html">
+        예약된 단어
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-mvel-learning-material-reference.html">
+        <div class="na-navbar-padding"> MVEL에 대한 정보를 찾는 위치</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-mvel-enabled-fields-in-wfa.html">
+        OnCommand Workflow Automation의 MVEL 사용 가능 필드
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-mvel-examples.html">
+        MVEL 구문의 예
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-references-to-learning-material.html">
+        학습 자료에 대한 참고 자료
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-supported-workflows-in-clustered-data-ontap.html">
+        ONTAP에서 지원되는 워크플로우
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-import-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져옵니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져오는 동안 고려해야 할 사항입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-export-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation 콘텐츠를 내보냅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-disable-cache-acquisition-for-dictionary-entries.html">
+        사전 항목에 대한 캐시 획득을 비활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-create-a-workflow-automation-pack.html">
+        WFA 워크플로우 팩을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-delete-wfa-packs.html">
+        OnCommand Workflow Automation 팩을 삭제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-add-approval-points.html">
+        승인 지점을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-define-filter-rules.html">
+        필터 규칙을 정의합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-create-a-scheme.html">
+        구성표를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-edit-a-scheme.html">
+        구성표를 편집합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-delete-a-scheme.html">
+        구성표를 삭제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/task-add-a-new-remote-system-type.html">
+        새 원격 시스템 유형을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-log-viewer-directory-window.html">
+        로그 뷰어 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-backup-restore-window.html">
+        Backup and Restore(백업 및 복원) 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-user-window.html">
+        <div class="na-navbar-padding"> 사용자 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-user-dialog-box.html">
+        새 사용자 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-user-dialog-box.html">
+        사용자 편집 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-client-preferences-dialog-box.html">
+        Preferences(기본 설정) 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-active-directory-groups-window.html">
+        <div class="na-navbar-padding"> Active Directory 그룹 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-active-directory-group-dialog-box.html">
+        새 Active Directory 그룹 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-active-directory-group-dialog-box.html">
+        Active Directory 그룹 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-approval-portal.html">
+        승인 포털 창
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-data-sources-window.html">
+        <div class="na-navbar-padding"> 데이터 소스 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-data-source-dialog-box.html">
+        새 데이터 원본 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-data-source-dialog-box.html">
+        데이터 원본 편집 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-credentials-window.html">
+        <div class="na-navbar-padding"> 자격 증명 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-test-connectivity-dialog-box.html">
+        연결 테스트 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-credentials-dialog-box.html">
+        새 자격 증명 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-credentials-dialog-box.html">
+        자격 증명 편집 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-about-dialog-box.html">
+        정보 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-portal-workflow-window.html">
+        Portal(포털) 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-execution-status-window.html">
+        실행 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-recurring-executions-window.html">
+        반복 실행 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-reservations-window.html">
+        예약 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-schedules-window.html">
+        <div class="na-navbar-padding"> 스케줄 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-schedule-dialog-box.html">
+        새 일정 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-workflows-window.html">
+        <div class="na-navbar-padding"> 워크플로 창</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-new-workflow-window.html">
+        <div class="na-navbar-padding"> 새 워크플로 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-parameters-for-commands-dialog-box.html">
+        명령 매개 변수 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-resource-selection-dialog-box.html">
+        자원 선택 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-incremental-naming-wizard.html">
+        증분 이름 지정 마법사
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-row-repetition-details-dialog-box.html">
+        행 반복 세부 정보 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-workflow-window.html">
+        workflow <workflow name>(워크플로 이름>) 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-execute-workflow-dialog-box.html">
+        워크플로 실행 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-variable-dialog-box.html">
+        변수 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-preview-workflow-dialog-box.html">
+        워크플로 미리보기 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-monitoring-window.html">
+        모니터링 창
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-approval-point-dialog-box.html">
+        새 승인 지점 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-approval-point-dialog-box.html">
+        승인 지점 편집 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-finders-window.html">
+        <div class="na-navbar-padding"> 파인더 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-finder-dialog-box.html">
+        새 찾기 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-finder-dialog-box.html">
+        Finder 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-finder-dialog-box.html">
+        클론 찾기 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-filters-window.html">
+        <div class="na-navbar-padding"> 필터 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-filter-dialog-box.html">
+        새 필터 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-filter-dialog-box.html">
+        필터 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-filter-dialog-box.html">
+        필터 복제 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-commands-window.html">
+        <div class="na-navbar-padding"> 명령 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-command-definition-dialog-box.html">
+        새 명령 정의 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-command-definition-dialog-box.html">
+        명령 정의 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-command-definition-dialog-box.html">
+        클론 명령 정의 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-functions-window.html">
+        기능 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-templates-window.html">
+        <div class="na-navbar-padding"> 템플릿 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-template-dialog-box.html">
+        새 템플릿 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-template-dialog-box.html">
+        템플릿 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-template-dialog-box.html">
+        템플릿 복제 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-schemes-window.html">
+        구성표 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-dictionary-window.html">
+        <div class="na-navbar-padding"> 사전 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-dictionary-entry-dialog-box.html">
+        새 사전 항목 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-dictionary-entry-dialog-box.html">
+        사전 항목 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-dictionary-entry-dialog-box.html">
+        사전 항목 복제 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-data-source-types-window.html">
+        데이터 소스 형식 창
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-remote-system-types-window.html">
+        <div class="na-navbar-padding"> 원격 시스템 유형 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-remote-system-type-dialog-box.html">
+        새 원격 시스템 유형 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-remote-system-type-dialog-box.html">
+        원격 시스템 유형 편집 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-cache-queries-window.html">
+        <div class="na-navbar-padding"> 캐시 쿼리 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-add-cache-query-dialog-box.html">
+        캐시 쿼리 추가 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-cache-query-dialog-box.html">
+        캐시 쿼리 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-cache-query-dialog-box.html">
+        클론 캐시 쿼리 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-packs-window.html">
+        <div class="na-navbar-padding"> 팩 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-pack-dialog-box.html">
+        새 팩 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-pack-dialog-box.html">
+        팩 편집 대화 상자
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/help/reference-categories-window.html">
+        <div class="na-navbar-padding"> 범주 창</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-new-category-dialog-box.html">
+        새 범주 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-edit-category-dialog-box.html">
+        범주 편집 대화 상자
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-clone-category-dialog-box.html">
+        범주 복제 대화 상자
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/help/reference-wfa-store-window.html">
+        스토리지 자동화 스토어 창
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 워크플로우</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-overview-of-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 개요
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-understanding-workflow-automation-designer.html">
+        <div class="na-navbar-padding"> Workflow Automation 설계자 이해</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-working-with-the-building-blocks-in-oncommand-workflow-automation.html">
+        <div class="na-navbar-padding"> OnCommand Workflow Automation에서 빌딩 블록 작업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-data-sources-are.html">
+        데이터 원본은 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-dictionary-entries-are.html">
+        사전 항목이 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-commands-work.html">
+        명령이 작동하는 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-filters-are.html">
+        필터란
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-finders-are.html">
+        어떤 장애물이 있는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-functions-are.html">
+        기능은 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-schemes-are.html">
+        구성표는 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-remote-system-types-are.html">
+        어떤 원격 시스템 유형인지 확인하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-use-templates.html">
+        서식 파일 사용 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-use-categories.html">
+        범주를 사용하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-entity-versioning-works.html">
+        엔터티 버전 관리 작동 방식
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-a-playground-database-is.html">
+        운동장 데이터베이스입니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-managing-workflows.html">
+        <div class="na-navbar-padding"> 워크플로 관리</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/task-customize-predefined-workflows.html">
+        <div class="na-navbar-padding"> 미리 정의된 워크플로 사용자 지정</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-customize-the-create-volume-and-create-cifs-share-workflow.html">
+        볼륨 생성 및 CIFS 공유 워크플로우를 사용자 지정합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-creating-workflows.html">
+        <div class="na-navbar-padding"> 워크플로우 생성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-tasks-involved-in-creating-workflows.html">
+        워크플로 생성과 관련된 작업
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-define-workflows.html">
+        워크플로우를 정의하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-define-user-input.html">
+        사용자 입력 정의 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-map-command-parameters.html">
+        명령 매개 변수를 매핑하는 방법입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-define-constants.html">
+        상수를 정의하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-repeat-row-works.html">
+        행 반복 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-resource-selection-works.html">
+        리소스 선택 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-reservation-works.html">
+        예약 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-incremental-naming-is.html">
+        증분 이름은 입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-conditional-execution-is.html">
+        조건부 실행이란
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-return-parameters-are.html">
+        반환 매개 변수의 작동 방식
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-approval-points-are.html">
+        승인 지점은 무엇입니까
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-execute-custom-rest-end-points.html">
+        사용자 지정 REST 끝점을 실행하는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-what-continue-on-failure-is.html">
+        장애 시 계속 진행 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-workflow-requirements-checklist.html">
+        워크플로 요구 사항 체크리스트 예
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/task-create-a-workflow.html">
+        <div class="na-navbar-padding"> 워크플로를 만듭니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-workflow-help-content.html">
+        워크플로 도움말 콘텐츠를 만듭니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/task-create-a-workflow-automation-pack.html">
+        <div class="na-navbar-padding"> WFA 워크플로우 팩을 생성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-add-entity-to-a-workflow-automation-pack.html">
+        WFA 워크플로우 팩에 엔터티를 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-delete-wfa-packs.html">
+        OnCommand Workflow Automation 팩을 삭제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-export-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation 콘텐츠를 내보냅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-import-oncommand-workflow-automation-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져옵니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-import-an-oncommand-workflow-automation-pack.html">
+        WFA 워크플로우 팩을 가져옵니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-considerations-of-importing-wfa-content.html">
+        OnCommand Workflow Automation 콘텐츠를 가져오는 동안 고려해야 할 사항입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-pack-identification-during-upgrade.html">
+        업그레이드 중 팩 식별
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-integrating-the-wfa-pack-with-scm-repository.html">
+        <div class="na-navbar-padding"> WFA 워크플로우 팩을 SCM 리포지토리에 통합합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-check-in-a-new-pack-to-scm.html">
+        SCM에 새 워크플로 팩을 체크 인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-check-in-a-new-version-of-a-pack-to-a-new-location-in-scm.html">
+        WFA 워크플로우 팩의 새 버전을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-update-the-pack-from-scm.html">
+        SCM 서버에서 WFA 워크플로우 팩을 업데이트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-check-in-an-already-existing-pack-into-scm.html">
+        기존 WFA 워크플로우 팩을 SCM 서버에 체크 인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-remove-entities-from-a-pack.html">
+        엔터티로부터 WFA 워크플로우 팩을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-rollback-pack-to-a-previous-version-in-scm.html">
+        SCM에서 WFA 워크플로우 팩을 이전 버전으로 롤백합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-creating-building-blocks-for-workflows.html">
+        <div class="na-navbar-padding"> 워크플로우를 위한 구성 요소 생성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-data-source-type.html">
+        데이터 원본 형식을 만듭니다
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/task-create-a-command.html">
+        <div class="na-navbar-padding"> 명령을 생성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-test-the-wfa-reservation-script-for-commands.html">
+        명령에 대한 예약 스크립트를 테스트합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-finder.html">
+        파인더를 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-filter.html">
+        필터를 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-dictionary-entry.html">
+        사전 항목을 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-function.html">
+        함수를 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-template.html">
+        템플릿을 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-a-cache-query.html">
+        캐시 쿼리를 만듭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-create-recurring-schedules.html">
+        반복 일정을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-define-filter-rules.html">
+        필터 규칙을 정의합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/task-add-approval-points.html">
+        승인 지점을 추가합니다
+      </a></li></ul></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/concept-coding-guidelines-for-wfa.html">
+        <div class="na-navbar-padding"> WFA에 대한 코딩 지침</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-variables.html">
+        변수에 대한 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-indentation.html">
+        들여쓰기를 위한 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-comments.html">
+        코멘트에 대한 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-logging.html">
+        로깅 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-error-handling.html">
+        오류 처리 지침
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/reference-general-powershell-conventions-for-wfa.html">
+        <div class="na-navbar-padding"> WFA에 대한 일반 PowerShell 및 Perl 규칙</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-perl-database-modules-bundled-with-windows.html">
+        Perl 모듈은 Windows와 함께 번들로 제공됩니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-adding-custom-powershell-modules-to-wfa.html">
+        사용자 지정 PowerShell 및 Perl 모듈을 추가할 때의 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-wfa-powershell-functions.html">
+        WFA cmdlet 및 기능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-powershell-and-perl-wfa-modules.html">
+        PowerShell 및 Perl WFA 모듈
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-other-programming-aspects.html">
+        PowerShell 명령을 Perl으로 변환할 때의 고려 사항
+      </a></li><li class="subfolders "><a href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-wfa-building-blocks.html">
+        <div class="na-navbar-padding"> WFA 구성 요소에 대한 지침입니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-sql-in-wfa.html">
+        WFA에서의 SQL에 대한 지침입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-wfa-functions.html">
+        WFA 기능에 대한 지침입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-wfa-dictionary-entry.html">
+        WFA 사전 항목에 대한 지침입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-commands.html">
+        명령 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-workflows.html">
+        워크플로 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-creating-a-validation-script-for-remote-system-type.html">
+        원격 시스템 유형에 대한 검증 스크립트 생성 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-guidelines-for-data-source-type.html">
+        데이터 소스 형식 만들기 지침
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-reserved-words.html">
+        예약된 단어
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/concept-how-you-use-the-rest-api.html">
+        REST API 사용 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-references-to-learning-material.html">
+        학습 자료에 대한 참고 자료
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/workflows/reference-related-documentation-for-oncommand-workflow-automation.html">
+        OnCommand Workflow Automation 관련 문서
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/legal-notices.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/workflow-automation-50/">OnCommand&nbsp;Workflow&nbsp;Automation&nbsp;5.0</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">OnCommand Workflow Automation를 설정합니다</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-04-26 16:40:42 +0000">04/26/2022</time>
+    
+  
+
+
+</p>
+
+<div class="paragraph lead">
+<p>WFA(OnCommand Workflow Automation) 설치를 완료한 후에는 몇 가지 구성 설정을 완료해야 합니다. WFA에 액세스하고, 사용자를 구성하고, 데이터 소스를 설정하고, 자격 증명을 구성하고, WFA를 구성해야 합니다.</p>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?</span>
+              <a target="_self" href="javascript:netapp_mailto()">의견을 공유해 주십시오</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ko-kr/announcements/">공지 사항</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/workflow-automation-50/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/workflow-automation-50/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/workflow-automation-50/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/workflow-automation-50/js/www-ntap.js'></script>
+    <script src='/ko-kr/workflow-automation-50/js/tabbed-blocks.js'></script>
+  </body></html>
