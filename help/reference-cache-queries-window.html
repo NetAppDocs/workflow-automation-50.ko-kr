@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/issues/new?body=Page%3A%20[캐시 쿼리 창](https://docs.netapp.com/ko-kr/workflow-automation-50/help/reference-cache-queries-window.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/blob/main/help/reference-cache-queries-window.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/workflow-automation-50/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/issues/new?body=Page%3A%20[캐시 쿼리 창](https://docs.netapp.com/ko-kr/workflow-automation-50/help/reference-cache-queries-window.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/workflow-automation-50/blob/main/help/reference-cache-queries-window.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/workflow-automation-50/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/workflow-automation-50/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/workflow-automation-50/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -277,35 +279,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/workflow-automation-50/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/workflow-automation-50/help/reference-cache-queries-window.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/workflow-automation-50/help/reference-cache-queries-window.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/workflow-automation-50/help/reference-cache-queries-window.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/workflow-automation-50/help/reference-cache-queries-window.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/workflow-automation-50/help/reference-cache-queries-window.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/workflow-automation-50/help/reference-cache-queries-window.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/workflow-automation-50/help/reference-cache-queries-window.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/workflow-automation-50/help/reference-cache-queries-window.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/workflow-automation-50/help/reference-cache-queries-window.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/workflow-automation-50/help/reference-cache-queries-window.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -349,7 +343,7 @@
   <div class="col-md-3" id="sidebar-height">
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
-    <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>사용 가능한 PDF<span>
     </span>
   </a>
 </div>
@@ -359,7 +353,7 @@
         
         
         <a target="_blank" href="/ko-kr/workflow-automation-50/pdfs/fullsite-sidebar/OnCommand_Workflow_Automation_문서.pdf" >
-          <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+          <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>이 문서 사이트의 PDF</a>
 
 
 
@@ -376,7 +370,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Linux용_설치_및_설정.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Linux용 설치 및 설정
           </a>
           
@@ -392,7 +386,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_개요.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 개요
           </a>
           
@@ -402,8 +396,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -423,14 +415,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설치를_위한_시스템_요구_사항.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 설치를 위한 시스템 요구 사항
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -450,14 +440,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Workflow_Automation_설치를_위한_사전_요구사항.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Workflow Automation 설치를 위한 사전 요구사항
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -477,7 +465,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             고가용성 관리
           </a>
           
@@ -493,7 +481,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_VCS에서_워크플로우_자동화_설정.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             고가용성을 위해 VCS에서 워크플로우 자동화 설정
           </a>
           
@@ -503,8 +491,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -518,8 +504,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -539,7 +523,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation를_설정합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation를 설정합니다
           </a>
           
@@ -557,7 +541,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터_소스.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터 소스
           </a>
           
@@ -573,7 +557,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_IQ_데이터_센터_관리자에서_데이터베이스_사용자_구성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성
           </a>
           
@@ -581,8 +565,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -594,8 +576,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -619,7 +599,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 구성
           </a>
           
@@ -637,8 +617,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -656,8 +634,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -677,14 +653,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_이상에서_업그레이드합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 3.1 이상에서 업그레이드합니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -704,7 +678,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/타사_제품_업그레이드.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             타사 제품 업그레이드
           </a>
           
@@ -712,8 +686,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -733,7 +705,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_백업하는_중입니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다
           </a>
           
@@ -751,7 +723,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스_백업.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             CLI를 사용하여 WFA 데이터베이스 백업
           </a>
           
@@ -759,8 +731,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -780,7 +750,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_백업.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             REST API를 사용하여 WFA 데이터베이스 백업
           </a>
           
@@ -788,8 +758,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -797,8 +765,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -818,7 +784,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_복원하는_중입니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다
           </a>
           
@@ -836,7 +802,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스를_복원합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             CLI를 사용하여 WFA 데이터베이스를 복원합니다
           </a>
           
@@ -844,8 +810,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -865,7 +829,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_복원.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             REST API를 사용하여 WFA 데이터베이스 복원
           </a>
           
@@ -873,8 +837,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -882,8 +844,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -905,14 +865,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_콘텐츠를_가져옵니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 콘텐츠를 가져옵니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -936,7 +894,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_인증서_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation SSL 인증서 관리
           </a>
           
@@ -944,8 +902,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -965,14 +921,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Perl_및_Perl_모듈_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Perl 및 Perl 모듈 관리
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -992,7 +946,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/설치_및_구성_문제_해결.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             설치 및 구성 문제 해결
           </a>
           
@@ -1000,8 +954,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1011,8 +963,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1032,7 +982,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Windows용_설치_및_설정.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Windows용 설치 및 설정
           </a>
           
@@ -1048,7 +998,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_개요.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 개요
           </a>
           
@@ -1056,8 +1006,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1077,14 +1025,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설치를_위한_시스템_요구_사항.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 설치를 위한 시스템 요구 사항
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1108,7 +1054,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             고가용성 관리
           </a>
           
@@ -1124,7 +1070,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_MSCS에서_Workflow_Automation을_설정합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다
           </a>
           
@@ -1134,8 +1080,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1149,8 +1093,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1170,7 +1112,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/고가용성을_위해_MSCS에서_Workflow_Automation을_설정합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             고가용성을 위해 MSCS에서 Workflow Automation을 설정합니다
           </a>
           
@@ -1180,8 +1122,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1201,7 +1141,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_설정.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 설정
           </a>
           
@@ -1219,7 +1159,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터_소스.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터 소스
           </a>
           
@@ -1235,7 +1175,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_IQ_데이터_센터_관리자에서_데이터베이스_사용자_구성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Active IQ 데이터 센터 관리자에서 데이터베이스 사용자 구성
           </a>
           
@@ -1243,8 +1183,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1256,8 +1194,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1281,7 +1217,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 구성
           </a>
           
@@ -1299,8 +1235,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1320,8 +1254,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1341,7 +1273,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation를_업그레이드합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation를 업그레이드합니다
           </a>
           
@@ -1357,14 +1289,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_3_1_이상_버전에서_업그레이드합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 3.1 이상 버전에서 업그레이드합니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1372,8 +1302,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1393,7 +1321,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/타사_제품_업그레이드.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             타사 제품 업그레이드
           </a>
           
@@ -1403,8 +1331,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1424,7 +1350,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_백업하는_중입니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터베이스를 백업하는 중입니다
           </a>
           
@@ -1444,7 +1370,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스_백업.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             CLI를 사용하여 WFA 데이터베이스 백업
           </a>
           
@@ -1452,8 +1378,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1473,7 +1397,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_백업.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             REST API를 사용하여 WFA 데이터베이스 백업
           </a>
           
@@ -1481,8 +1405,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1490,8 +1412,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1511,7 +1431,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_데이터베이스를_복원하는_중입니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 데이터베이스를 복원하는 중입니다
           </a>
           
@@ -1529,7 +1449,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/CLI를_사용하여_WFA_데이터베이스를_복원합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             CLI를 사용하여 WFA 데이터베이스를 복원합니다
           </a>
           
@@ -1537,8 +1457,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1558,7 +1476,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/REST_API를_사용하여_WFA_데이터베이스_복원.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             REST API를 사용하여 WFA 데이터베이스 복원
           </a>
           
@@ -1566,8 +1484,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1575,8 +1491,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1598,14 +1512,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_콘텐츠를_가져옵니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 콘텐츠를 가져옵니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1629,7 +1541,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_SSL_인증서_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation SSL 인증서 관리
           </a>
           
@@ -1637,8 +1549,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1658,7 +1568,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Perl_및_Perl_모듈_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Perl 및 Perl 모듈 관리
           </a>
           
@@ -1668,8 +1578,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1689,7 +1597,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/설치_및_구성_문제_해결.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             설치 및 구성 문제 해결
           </a>
           
@@ -1701,8 +1609,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1712,8 +1618,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1733,7 +1637,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/온라인_도움말.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             온라인 도움말
           </a>
           
@@ -1753,7 +1657,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_구성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 구성
           </a>
           
@@ -1771,8 +1675,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1796,7 +1698,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation_디자이너_기능.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation 디자이너 기능
           </a>
           
@@ -1822,8 +1724,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1853,7 +1753,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/데이터_원본을_설정합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             데이터 원본을 설정합니다
           </a>
           
@@ -1861,8 +1761,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1886,7 +1784,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/MVEL에_대한_정보를_찾는_위치.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             MVEL에 대한 정보를 찾는 위치
           </a>
           
@@ -1894,8 +1792,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1947,7 +1843,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/사용자_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             사용자 창
           </a>
           
@@ -1955,8 +1851,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1978,7 +1872,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Active_Directory_그룹_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Active Directory 그룹 창
           </a>
           
@@ -1988,8 +1882,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2009,7 +1901,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/데이터_소스_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             데이터 소스 창
           </a>
           
@@ -2017,8 +1909,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2038,7 +1928,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/자격_증명_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             자격 증명 창
           </a>
           
@@ -2048,8 +1938,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2079,14 +1967,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/스케줄_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             스케줄 창
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2106,7 +1992,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로 창
           </a>
           
@@ -2122,7 +2008,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/새_워크플로_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             새 워크플로 창
           </a>
           
@@ -2134,8 +2020,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2157,8 +2041,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2178,7 +2060,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/파인더_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             파인더 창
           </a>
           
@@ -2188,8 +2070,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2209,7 +2089,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/필터_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             필터 창
           </a>
           
@@ -2219,8 +2099,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2240,7 +2118,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/명령_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             명령 창
           </a>
           
@@ -2250,8 +2128,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2273,7 +2149,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/템플릿_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             템플릿 창
           </a>
           
@@ -2283,8 +2159,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2306,7 +2180,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/사전_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             사전 창
           </a>
           
@@ -2316,8 +2190,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2339,7 +2211,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/원격_시스템_유형_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             원격 시스템 유형 창
           </a>
           
@@ -2347,8 +2219,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2368,7 +2238,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/캐시_쿼리_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             캐시 쿼리 창
           </a>
           
@@ -2378,17 +2248,6 @@
 
 
 
-
-          
-            <li class="active pdf-hide">
-  <a target="_blank" href="/ko-kr/workflow-automation-50/pdfs/pages/help/reference-cache-queries-window.pdf" >
-    <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-
-          
         </li>
       </ul>
     
@@ -2408,7 +2267,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/팩_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             팩 창
           </a>
           
@@ -2416,8 +2275,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2437,7 +2294,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/범주_창.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             범주 창
           </a>
           
@@ -2447,8 +2304,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2458,8 +2313,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2479,7 +2332,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로우
           </a>
           
@@ -2497,7 +2350,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/Workflow_Automation_설계자_이해.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             Workflow Automation 설계자 이해
           </a>
           
@@ -2513,7 +2366,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/OnCommand_Workflow_Automation에서_빌딩_블록_작업.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             OnCommand Workflow Automation에서 빌딩 블록 작업
           </a>
           
@@ -2539,8 +2392,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2550,8 +2401,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2571,7 +2420,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로_관리.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로 관리
           </a>
           
@@ -2587,14 +2436,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/미리_정의된_워크플로_사용자_지정.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             미리 정의된 워크플로 사용자 지정
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2614,7 +2461,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우_생성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로우 생성
           </a>
           
@@ -2660,14 +2507,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로를_만듭니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로를 만듭니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2675,8 +2520,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2696,7 +2539,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_워크플로우_팩을_생성합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             WFA 워크플로우 팩을 생성합니다
           </a>
           
@@ -2714,8 +2557,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2735,7 +2576,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_워크플로우_팩을_SCM_리포지토리에_통합합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             WFA 워크플로우 팩을 SCM 리포지토리에 통합합니다
           </a>
           
@@ -2751,8 +2592,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2760,8 +2599,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2781,7 +2618,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/워크플로우를_위한_구성_요소_생성.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             워크플로우를 위한 구성 요소 생성
           </a>
           
@@ -2799,14 +2636,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/명령을_생성합니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             명령을 생성합니다
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2832,8 +2667,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2853,7 +2686,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA에_대한_코딩_지침.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             WFA에 대한 코딩 지침
           </a>
           
@@ -2879,14 +2712,12 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA에_대한_일반_PowerShell_및_Perl_규칙.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             WFA에 대한 일반 PowerShell 및 Perl 규칙
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2914,7 +2745,7 @@
               href="/ko-kr/workflow-automation-50/pdfs/sidebar/WFA_구성_요소에_대한_지침입니다.pdf" 
             
           >
-            <img src="/ko-kr/workflow-automation-50/images/pdf.png" width="16" height="16"/>
+            <img src="/ko-kr/workflow-automation-50/images/pdf.png" alt="" width="16" height="16"/>
             WFA 구성 요소에 대한 지침입니다
           </a>
           
@@ -2932,8 +2763,13 @@
 
 
 
+        </li>
+      </ul>
+    
 
-          
+  
+
+
         </li>
       </ul>
     
@@ -2942,37 +2778,25 @@
 
 
 
-          
+
+
+
+
+
+
+
         </li>
       </ul>
     
 
   
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
 
 
 
 </li></ul>
   <div class="zip-pdf-link-container" style="display: none;">   
     <a href="#" id="zipPdf">
-      <img src="/ko-kr/workflow-automation-50/images/pdf-zip.png" width="16" height="16"/>
+      <img src="/ko-kr/workflow-automation-50/images/pdf-zip.png" alt="" width="16" height="16"/>
       <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
     </a><div id="zip-link-popup" class="hide">
     <div class="inner-modal">
@@ -3005,7 +2829,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/index.html">
         OnCommand Workflow Automation 5.0 문서
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/workflow-automation-50/reference-releasenotes.html">
@@ -3911,6 +3735,9 @@
     
   
 
+<span>기여자
+</span>
+
 
 </p>
 
@@ -4279,4 +4106,5 @@ Add to Pack 기능은 인증이 None으로 설정된 캐시 쿼리에 대해서�
     </script>
     <script src='/ko-kr/workflow-automation-50/js/www-ntap.js'></script>
     <script src='/ko-kr/workflow-automation-50/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/workflow-automation-50/js/sidebar.js'></script>
   </body></html>
