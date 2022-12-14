@@ -13,6 +13,7 @@ summary: 일부 Perl 모듈은 Linux용 Perl 패키지와 함께 기본적으로
 [role="lead"]
 일부 Perl 모듈은 Linux용 Perl 패키지와 함께 기본적으로 포함되어 있지 않습니다.
 
+.이 작업에 대해
 WFA 설치 중에 WFA 설치 관리자는 시스템에서 모든 Perl 모듈을 사용할 수 있는지 확인한 다음, 이 요구사항이 충족되면 계속 진행합니다. WFA(OnCommand Workflow Automation)를 설치하기 전에 Perl 모듈을 설치해야 합니다.
 
 

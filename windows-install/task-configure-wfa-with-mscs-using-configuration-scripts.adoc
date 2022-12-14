@@ -13,6 +13,7 @@ summary: 'MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치�
 [role="lead"]
 MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치한 후에는 구성 스크립트를 사용하여 MSCS에서 고가용성을 지원하도록 WFA를 구성해야 합니다.
 
+.필요한 것
 WFA 백업을 만들어야 합니다.
 
 .단계

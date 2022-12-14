@@ -13,6 +13,7 @@ summary: 시스템에 설치된 Perl 패키지는 OnCommand Workflow Automation�
 [role="lead"]
 시스템에 설치된 Perl 패키지는 OnCommand Workflow Automation에서 사용합니다. 다른 Perl 배포를 사용하려는 경우 WFA에서 사용할 수 있도록 기본 Perl 배포를 구성할 수 있습니다.
 
+.필요한 것
 WFA 서버에 필요한 Perl 배포를 설치해야 합니다.
 
 .단계

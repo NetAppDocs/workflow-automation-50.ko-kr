@@ -13,8 +13,10 @@ summary: 'WFA(OnCommand Workflow Automation) 데이터베이스와 지원되는 
 [role="lead"]
 WFA(OnCommand Workflow Automation) 데이터베이스와 지원되는 구성을 백업 및 복원하면 재해 발생 시 데이터를 복구할 수 있습니다. 지원되는 구성에는 데이터 액세스, HTTP 시간 초과 및 SSL 인증서가 포함됩니다.
 
+.필요한 것
 관리자 권한이나 설계자 자격 증명이 있어야 합니다.
 
+.이 작업에 대해
 백업을 복원하면 WFA에서 액세스하는 모든 스토리지 시스템에 액세스할 수 있으므로 안전한 위치에 백업을 생성해야 합니다.
 
 [NOTE]

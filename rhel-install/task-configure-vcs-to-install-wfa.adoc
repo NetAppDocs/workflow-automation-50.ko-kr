@@ -13,7 +13,7 @@ summary: 'WFA(OnCommand Workflow Automation)를 VCS(Veritas Cluster Server)에 �
 [role="lead"]
 WFA(OnCommand Workflow Automation)를 VCS(Veritas Cluster Server)에 설치하기 전에 클러스터 노드가 WFA를 지원하도록 올바르게 구성되어 있는지 확인해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * VCS는 _Veritas Cluster Server 6.1.1 설치 가이드 _ 의 지침에 따라 클러스터의 두 노드에 모두 설치되어야 합니다.
 * 클러스터 이벤트에 대한 알림을 받으려면 _Veritas Cluster Server Administrator's Guide _ 의 지침에 따라 SNMP 및 SMTP에 대해 VCS 소프트웨어를 구성해야 합니다.
 * 클러스터 서버 구성에 대한 모든 요구사항과 지침은 VCS 설명서에 따라 충족되어야 합니다.

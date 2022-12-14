@@ -13,7 +13,7 @@ summary: 'VCS에 WFA(Workflow Automation)를 설치한 후에는 고가용성을
 [role="lead"]
 VCS에 WFA(Workflow Automation)를 설치한 후에는 고가용성을 위해 구성 스크립트를 사용하여 VCS에서 WFA를 구성해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 두 클러스터 노드 모두에 동일한 버전의 WFA를 설치해야 합니다.
 * 두 노드의 설치 경로가 동일해야 합니다.
 * WFA 백업을 만들어야 합니다.

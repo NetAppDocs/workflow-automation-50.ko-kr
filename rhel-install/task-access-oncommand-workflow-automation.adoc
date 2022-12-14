@@ -13,6 +13,7 @@ summary: 'WFA 서버에 액세스할 수 있는 모든 시스템에서 웹 브�
 [role="lead"]
 WFA 서버에 액세스할 수 있는 모든 시스템에서 웹 브라우저를 통해 OnCommand Workflow Automation(WFA)에 액세스할 수 있습니다.
 
+.필요한 것
 웹 브라우저에 Adobe Flash Player를 설치해야 합니다.
 
 .단계

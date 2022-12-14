@@ -13,7 +13,7 @@ summary: 'WFA(OnCommand Workflow Automation)는 CLI(Command-Line Interface)를 �
 [role="lead"]
 WFA(OnCommand Workflow Automation)는 CLI(Command-Line Interface)를 사용하여 설치할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 설치 필수 구성 요소를 검토해야 합니다.
 +
 xref:reference-prerequisites-for-installing-workflow-automation.adoc[설치 필수 구성 요소]
@@ -21,6 +21,7 @@ xref:reference-prerequisites-for-installing-workflow-automation.adoc[설치 필�
 * NetApp Support 사이트에서 WFA 설치 프로그램을 다운로드해야 합니다.
 
 
+.이 작업에 대해
 가상 머신(VM)에 WFA를 설치하는 경우 VM의 이름에 밑줄(_) 문자를 포함할 수 없습니다.
 
 쉘 프롬프트에서 기본 설치 위치를 변경할 수 있습니다.

@@ -13,8 +13,10 @@ summary: 'OnCommand Workflow Automation(WFA)를 사용하여 게스트, 운영�
 [role="lead"]
 OnCommand Workflow Automation(WFA)를 사용하여 게스트, 운영자, 승인자, 설계자, 권한 등 다양한 역할에 대한 특정 권한을 가진 로컬 WFA 사용자를 생성하고 관리할 수 관리, 백업.
 
+.필요한 것
 WFA를 설치하고 관리자로 로그인해야 합니다.
 
+.이 작업에 대해
 WFA를 사용하여 다음 역할에 맞는 사용자를 생성할 수 있습니다.
 
 * * 게스트 *

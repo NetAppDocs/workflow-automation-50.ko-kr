@@ -13,6 +13,7 @@ summary: 'ActiveState Perl Package Manager(PPM)를 사용하여 사이트별 Per
 [role="lead"]
 ActiveState Perl Package Manager(PPM)를 사용하여 사이트별 Perl 모듈을 관리할 수 있습니다. WFA를 업그레이드하는 동안 Perl 모듈이 삭제되지 않도록 WFA(OnCommand Workflow Automation) 설치 디렉토리 외부에 사이트별 Perl 모듈을 설치해야 합니다.
 
+.이 작업에 대해
 PERL5LIB 환경 변수를 사용하면 WFA 서버에 설치된 Perl 해석기를 구성하여 Perl 모듈을 사용할 수 있습니다.
 
 이 절차의 예로 c:\Perl의 사용자 영역에 try-Tiny Perl 모듈을 설치하는 것이 있습니다. WFA를 제거해도 이 사용자 영역이 삭제되지 않으며 WFA를 다시 설치하거나 업그레이드한 후에 이 영역을 다시 사용할 수 있습니다.

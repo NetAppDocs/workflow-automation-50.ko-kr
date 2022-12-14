@@ -13,8 +13,10 @@ summary: '기본적으로 ActivePerl은 WFA(OnCommand Workflow Automation)와 �
 [role="lead"]
 기본적으로 ActivePerl은 WFA(OnCommand Workflow Automation)와 함께 설치됩니다. 다른 Perl 배포를 사용하려는 경우 WFA에서 사용할 수 있도록 기본 Perl 배포를 구성할 수 있습니다.
 
+.필요한 것
 WFA 서버에 필요한 Perl 배포를 설치해야 합니다.
 
+.이 작업에 대해
 기본 ActivePerl 설치를 제거하거나 덮어쓰지 않아야 합니다. 기본 Perl 배포를 별도의 위치에 설치해야 합니다.
 
 .단계

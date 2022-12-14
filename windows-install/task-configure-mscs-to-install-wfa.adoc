@@ -13,7 +13,7 @@ summary: 'MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치�
 [role="lead"]
 MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치하기 전에 MSCS 환경을 구성해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * MSCS는 서버 관리자에서 설치해야 합니다.
 * 선택 사항: Windows용 SnapDrive를 설치해야 합니다.
 +
@@ -23,6 +23,7 @@ MSCS(Microsoft Cluster Server)에 WFA(Workflow Automation)를 설치하기 전�
 * 두 클러스터 노드를 동일한 도메인에 추가해야 합니다.
 
 
+.이 작업에 대해
 MSCS 인터페이스에서 Cluster Manager를 사용하여 이 작업을 완료해야 합니다.
 
 .단계

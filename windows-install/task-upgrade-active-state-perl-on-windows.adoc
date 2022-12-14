@@ -13,8 +13,10 @@ summary: 'OnCommand Workflow Automation(WFA)는 Windows에서 ActiveState Perl�
 [role="lead"]
 OnCommand Workflow Automation(WFA)는 Windows에서 ActiveState Perl의 Enterprise 에디션과 함께 사용할 수 있습니다. Windows 서버의 보안 취약점에 대한 수정 사항을 얻기 위해 최신 버전의 ActiveState Perl로 업그레이드할 수 있습니다.
 
+.필요한 것
 WFA 서버에 Windows 관리자 권한이 있어야 합니다. ActiveState Perl은 "현재 위치" 업그레이드를 지원하지 않습니다.
 
+.이 작업에 대해
 WFA 5.0은 ActiveState Perl의 Enterprise 버전을 사용합니다.
 
 ActiveState Perl 5.16.3 빌드 1603.14에서 이후 빌드로 업그레이드할 수 있습니다. ActiveState Perl의 주요 릴리즈로 업그레이드할 수 없습니다.
